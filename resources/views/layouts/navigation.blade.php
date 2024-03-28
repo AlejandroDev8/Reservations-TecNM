@@ -15,6 +15,9 @@
                     <x-nav-link :href="route('reservation.index')" :active="request()->routeIs('reservation.index')">
                         {{ __('Reservaciones') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('reservation.create')" :active="request()->routeIs('reservation.create')">
+                        {{ __('Solicitar Reservación') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -76,6 +79,10 @@
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('reservation.index')" :active="request()->routeIs('reservation.index')">
                 {{ __('Reservaciones') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('reservation.create')"
+                :active="request()->routeIs('reservation.create')">
+                {{ __('Solicitar Reservación') }}
             </x-responsive-nav-link>
         </div>
 
