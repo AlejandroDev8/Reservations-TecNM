@@ -9,6 +9,7 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', [ReservationController::class, 'index'])->middleware(['auth', 'verified'])->name('reservation.index');
+Route::get('/reservations/create', [ReservationController::class, 'create'])->middleware(['auth', 'verified'])->name('reservation.create');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
