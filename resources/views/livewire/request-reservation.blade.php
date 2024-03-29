@@ -1,4 +1,5 @@
-<form class="md:w-1/2 space-y-5">
+<form class="md:w-1/2 space-y-5" novalidate>
+    @csrf
     <h1 class="font-bold text-lg mb-3 text-center">Formulario de Reservación</h1>
     <div>
         <x-input-label for="email" :value="__('Correo Electrónico')" />
