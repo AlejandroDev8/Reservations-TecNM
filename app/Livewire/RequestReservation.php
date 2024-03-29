@@ -2,9 +2,9 @@
 
 namespace App\Livewire;
 
-use App\Models\Arrangement;
 use App\Models\Room;
 use Livewire\Component;
+use App\Models\Accommodation;
 
 class RequestReservation extends Component
 {
@@ -13,7 +13,7 @@ class RequestReservation extends Component
         // Query the database
 
         $rooms = Room::all();
-        $accommodations = Arrangement::all();
+        $accommodations = Accommodation::all();
 
         return view('livewire.request-reservation', [
             'rooms' => $rooms,

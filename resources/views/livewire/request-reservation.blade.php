@@ -23,10 +23,10 @@
         <x-input-label for="sillas" :value="__('Seleccione el acomodo de sillas')" />
         <select name="sillas" id="sillas"
             class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-300 focus:ring-opacity-50 w-full">
-            <option value="" disabled selected>-- Seleccione un acomodo --</option>
-            <option value="1">Acomodo en "U"</option>
-            <option value="2">Acomodo tipo Mesas y Sillas</option>
-            <option value="3">Acomodo tipo Conferencia</option>
+            <option disabled selected>-- Seleccione un acomodo --</option>
+            @foreach ($accommodations as $accommodation)
+            <option value="{{ $accommodation->id }}">{{ $accommodation->accommodation_name }}</option>
+            @endforeach
         </select>
     </div>
     <div>
