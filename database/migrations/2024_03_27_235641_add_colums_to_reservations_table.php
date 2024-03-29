@@ -21,10 +21,6 @@ return new class extends Migration
             $table->foreignId('state_id')->constrained()->onDelete('cascade');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->text('answer')->nullable();
-
-            // create a composite unique key
-
-            $table->unique(['room_id', 'date_in', 'date_out']);
         });
     }
 
@@ -47,7 +43,6 @@ return new class extends Migration
             $table->dropForeign(['user_id']);
             $table->dropColumn('user_id');
             $table->dropColumn('answer');
-            $table->dropUnique(['room_id', 'date_in', 'date_out']);
         });
     }
 };
