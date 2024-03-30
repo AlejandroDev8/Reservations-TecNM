@@ -3,7 +3,8 @@
     <h1 class="font-bold text-lg mb-3 text-center">Formulario de Reservación</h1>
     <div>
         <x-input-label for="email" :value="__('Correo Electrónico')" />
-        <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" />
+        <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="$user_email"
+            placeholder="Correo electrónico para mandar la confirmación de la reservación" disabled />
     </div>
     <div>
         <x-input-label for="sala" :value="__('Seleccione una sala')" />

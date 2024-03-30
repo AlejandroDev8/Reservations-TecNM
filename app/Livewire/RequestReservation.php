@@ -10,6 +10,10 @@ class RequestReservation extends Component
 {
     public function render()
     {
+        // Get the user authenticated
+
+        $user = auth()->user();
+
         // Query the database
 
         $rooms = Room::all();
@@ -18,6 +22,7 @@ class RequestReservation extends Component
         return view('livewire.request-reservation', [
             'rooms' => $rooms,
             'accommodations' => $accommodations,
+            'user_email' => $user->email,
         ]);
     }
 }
