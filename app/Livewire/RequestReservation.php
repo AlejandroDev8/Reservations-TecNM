@@ -31,6 +31,11 @@ class RequestReservation extends Component
         $this->accommodation = '';
     }
 
+    public function requestReservation()
+    {
+        $data = $this->validate();
+    }
+
     public function render()
     {
         // Get the user authenticated
