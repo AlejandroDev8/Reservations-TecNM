@@ -15,6 +15,22 @@ class RequestReservation extends Component
     public $accommodation;
     public $reasons;
 
+    protected $rules = [
+        'email' => 'required|email',
+        'room' => 'required',
+        'date_in' => 'required|date',
+        'date_out' => 'required|date',
+        'accommodation' => 'required',
+        'reasons' => 'nullable|max:150',
+    ];
+
+    public function mount()
+    {
+        $this->email = auth()->user()->email;
+        $this->room = '';
+        $this->accommodation = '';
+    }
+
     public function render()
     {
         // Get the user authenticated
