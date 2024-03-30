@@ -8,6 +8,13 @@ use App\Models\Accommodation;
 
 class RequestReservation extends Component
 {
+    public $email;
+    public $room;
+    public $date_in;
+    public $date_out;
+    public $accommodation;
+    public $reasons;
+
     public function render()
     {
         // Get the user authenticated
