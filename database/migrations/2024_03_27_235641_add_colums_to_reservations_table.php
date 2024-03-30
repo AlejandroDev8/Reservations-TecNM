@@ -17,7 +17,7 @@ return new class extends Migration
             $table->date('date_in');
             $table->date('date_out');
             $table->foreignId('accommodation_id')->constrained()->onDelete('cascade');
-            $table->text('reasons');
+            $table->text('reasons')->nullable();
             $table->foreignId('state_id')->constrained()->onDelete('cascade');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->text('answer')->nullable();
