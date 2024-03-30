@@ -7,8 +7,8 @@
             placeholder="Correo electrónico para mandar la confirmación de la reservación" disabled />
     </div>
     <div>
-        <x-input-label for="sala" :value="__('Seleccione una sala')" />
-        <select name="salas" id="sala"
+        <x-input-label for="room" :value="__('Seleccione una sala')" />
+        <select name="rooms" id="room"
             class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-300 focus:ring-opacity-50 w-full">
             <option disabled selected>-- Seleccione una sala --</option>
             @foreach ($rooms as $room)
@@ -17,12 +17,16 @@
         </select>
     </div>
     <div>
-        <x-input-label for="fecha" :value="__('Seleccione una Fecha')" />
-        <x-text-input id="fecha" class="block mt-1 w-full" type="date" name="fecha" :value="old('fecha')" />
+        <x-input-label for="date_in" :value="__('Seleccione una Fecha de Inicio')" />
+        <x-text-input id="date_in" class="block mt-1 w-full" type="date" name="date_in" :value="old('date_in')" />
     </div>
     <div>
-        <x-input-label for="sillas" :value="__('Seleccione el acomodo de sillas')" />
-        <select name="sillas" id="sillas"
+        <x-input-label for="date_out" :value="__('Seleccione una Fecha de Fin')" />
+        <x-text-input id="date_out" class="block mt-1 w-full" type="date" name="date_out" :value="old('date_out')" />
+    </div>
+    <div>
+        <x-input-label for="chairs" :value="__('Seleccione el acomodo de sillas')" />
+        <select name="chairs" id="chairs"
             class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-300 focus:ring-opacity-50 w-full">
             <option disabled selected>-- Seleccione un acomodo --</option>
             @foreach ($accommodations as $accommodation)
@@ -31,8 +35,8 @@
         </select>
     </div>
     <div>
-        <x-input-label for="extras" :value="__('Especificaciones extras')" />
-        <textarea name="extras" id="extras" cols="30" rows="10"
+        <x-input-label for="reasons" :value="__('Especificaciones extras')" />
+        <textarea name="reasons" id="reasons" cols="30" rows="10"
             class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-300 focus:ring-opacity-50 w-full"
             placeholder="Especificaciones extras para añadir a la sala (Limpieza, más sillas y/o mesas, etc..)"></textarea>
     </div>
